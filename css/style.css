@@ -1,0 +1,279 @@
+/* Global Styles */
+:root {
+    --primary-color: #ff5722;
+    --secondary-color: #333;
+    --accent-color: #0c91ea;
+    --light-bg: #f4f4f4;
+    --text-color: #fff;
+    --hover-color: #e64a19;
+    --border-color: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
+
+/* Header and Footer */
+header, footer {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links a,
+nav .Donate,
+nav .Register {
+    padding: 10px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 20px;
+    transition: opacity 0.3s;
+}
+
+nav .Donate {
+    background: var(--primary-color);
+}
+
+nav .Register {
+    background: var(--accent-color);
+}
+
+.nav-links a:hover,
+nav .Donate:hover,
+nav .Register:hover {
+    opacity: 0.8;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+h2, h3 {
+    color: var(--secondary-color);
+}
+
+p {
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.gallery{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: normal;
+}
+
+.img{
+    width: 400px;
+    padding: 3px;
+}
+
+.img1{
+    width: 700px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+}
+
+.type-u{
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: var(--primary-color);
+    border: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #b1b1b1;
+}
+
+/*Container for videos*/
+.video-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    animation-duration: unset;
+}
+
+/* Container for scrolling Meet-the-team*/
+.container-loop{
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /*space between each member*/
+    animation: slide 40s linear infinite;
+}
+
+.container-loop img{
+    height: 300px;
+    margin: 0 24px;
+}
+
+.newsletter {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation to scroll logos*/
+@keyframes slide {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(-100%);
+    }
+}
+
+/* Ensure the container has a width that can be adjusted based on logo count */
+.Meet-the-team{
+    overflow: hidden;
+}
+
+.Meet-the-team .Meet-the-team-loop-container{
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--secondary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero, .mission, .education, .features, .update-grid {
+        flex-direction: column;
+    }
+
+    .hero-content, .donation-form, .mission-content, .mission-image, .education-content, .education-image, .feature, .update {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #000;
+    color: var(--text-color);
+    padding: 3rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-logo-container, .footer-section {
+    text-align: center;
+    padding: 10px 80px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
